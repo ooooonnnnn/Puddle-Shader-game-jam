@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8d76b9b0c8a370246a2252ea79c06f19
+guid: 376aa88b595a39c49ab5b0227c2ebc8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2987328874264356946
-    second: GroundTileOneSide_0
+      213: 2010897164308481282
+    second: wordart_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GroundTileOneSide_0
+      name: wordart_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 200
-        height: 100
+        x: 114
+        y: 179
+        width: 1395
+        height: 867
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2586bc998cf157920800000000000000
-      internalID: 2987328874264356946
+      spriteID: 2058276115428eb10800000000000000
+      internalID: 2010897164308481282
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GroundTileOneSide_0: 2987328874264356946
+      wordart_0: 2010897164308481282
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
