@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6382307460499366062}
   - component: {fileID: 2420909439124677866}
   - component: {fileID: 6112570683173610380}
+  - component: {fileID: 4940441134042591094}
   m_Layer: 0
   m_Name: Pipe Entrance
   m_TagString: Ground
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,9 +79,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.74388826, g: 0.81886786, b: 0.733891, a: 1}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: -2710536439906541850, guid: 347c8a5fda0e2aa4a9f2c0e5162acb43, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26db2f57aafad246a320bb696bf0caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedColor: {r: 0.11764707, g: 1, b: 0, a: 1}
+  connectedColor: {r: 1, g: 1, b: 1, a: 1}
   disconnectedColor: {r: 0, g: 0, b: 0, a: 1}
   spriteRenderer: {fileID: 8600204976525774808}
   _myExit: {fileID: 0}
@@ -145,7 +146,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.97, y: 0.94}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -197,7 +198,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.04, y: 1}
   m_EdgeRadius: 0
 --- !u!120 &4940441134042591094
 LineRenderer:
@@ -243,11 +244,11 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 1.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -293,10 +294,10 @@ LineRenderer:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 10
     numCapVertices: 0
     alignment: 0
-    textureMode: 1
+    textureMode: 3
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
