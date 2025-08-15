@@ -7,6 +7,7 @@ public class PipeBehavior : MonoBehaviour
     [SerializeField] private Color connectedColor;
     [SerializeField] private Color disconnectedColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float maxExitSpeed = 25f;
 
     public PipeBehavior myExit
     {
@@ -61,7 +62,7 @@ public class PipeBehavior : MonoBehaviour
         player.transform.position = exitPosition;
 
         // Set velocity in the exit's direction, with the new speed
-        float newSpeed = originalSpeed + exitVelocity;
+        float newSpeed = Mathf.Clamp(originalSpeed + exitVelocity, 0, maxExitSpeed);
         playerRigidbody.linearVelocity = (Vector2)myExit.transform.up * newSpeed;
 
         yield return new WaitForSeconds(0.2f);
