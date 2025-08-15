@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Connections))]
-public class Connector : MonoBehaviour
+public class Connector : MonoBehaviour, IActivatable
 {
     [SerializeField] private Connections connectionObj;
     [SerializeField] private ConnectorVisualizer visualizer;
@@ -37,5 +37,10 @@ public class Connector : MonoBehaviour
             NextState();
             print($"Connecting {currentState.Value.first.name} to {currentState.Value.second.name}");
         }
+    }
+
+    public void Activate()
+    {
+        NextState();
     }
 }
