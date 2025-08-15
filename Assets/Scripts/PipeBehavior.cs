@@ -4,7 +4,7 @@ using static UnityEngine.KeyCode;
 
 public class PipeBehavior : MonoBehaviour
 {
-    public GameObject myExit;
+    public PipeBehavior myExit;
     [SerializeField] private float exitVelocity = 5f;
 
     private void OnTriggerEnter2D(Collider2D other)
