@@ -22,10 +22,10 @@ public class PipeBehavior : MonoBehaviour
             StartCoroutine(myEnterPipe(other.gameObject.GetComponent<PathFollower>()));
     }
     
-    private void OnTriggerStay2D(Collider2D other)
-    {
-            StartCoroutine(myEnterPipe(other.GetComponent<PathFollower>()));
-    }
+    //private void OnTriggerStay2D(Collider2D other)
+    //{
+    //        StartCoroutine(myEnterPipe(other.GetComponent<PathFollower>()));
+    //}
 
     private IEnumerator myEnterPipe(PathFollower pathFollower)
     {

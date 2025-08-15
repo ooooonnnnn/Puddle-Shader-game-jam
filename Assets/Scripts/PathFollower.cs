@@ -30,7 +30,7 @@ public class PathFollower : MonoBehaviour
             endPoints.Add(currentPoint);
             print($"{currentPoint.paths.Where(p => p.isActive).Count()} active paths from {currentPoint.gameObject.name}");
             Path nextPath = currentPoint.paths.Find(path => 
-            {return path.isActive && !path.endPoints.Contains(currentPoint);});
+            {return path.isActive && path.endPoints.Contains(currentPoint);});
             paths.Add(nextPath);
             currentPoint = nextPath.endPoints.Find(ep => ep != currentPoint);
             print($"next end point {currentPoint.gameObject.name}");
