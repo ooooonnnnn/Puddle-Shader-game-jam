@@ -6,16 +6,16 @@ public class Controller : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float torque;
     [SerializeField] private float airForce;
-    [SerializeField] private float jumpHeight;
+    //[SerializeField] private float jumpHeight;
     [SerializeField] private float maxControlAngularSpeed;
-    private float jumpVelocity;
+    //private float jumpVelocity;
     private bool isGrounded;
     private float oneOverRadius;
 
     private void Awake()
     {
         oneOverRadius = 1/GetComponent<CircleCollider2D>().radius;
-        jumpVelocity = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
+        //jumpVelocity = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
     }
 
     private const float oneOverPi = 1 / math.PI;
@@ -24,7 +24,6 @@ public class Controller : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float angSpeed = rb.angularVelocity;
-        print(angSpeed);
         if (angSpeed > maxControlAngularSpeed)
             horizontalInput = math.clamp(horizontalInput, 0, 1);
         else if (angSpeed < -maxControlAngularSpeed)
@@ -43,11 +42,11 @@ public class Controller : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.linearVelocity += jumpVelocity * Vector2.up;
-            return;
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        //{
+        //    rb.linearVelocity += jumpVelocity * Vector2.up;
+        //    return;
+        //}
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
