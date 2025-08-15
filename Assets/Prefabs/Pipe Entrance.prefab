@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1472158663427659320}
   - component: {fileID: 8600204976525774808}
   - component: {fileID: 6382307460499366062}
+  - component: {fileID: -1803824039330207074}
   - component: {fileID: 2420909439124677866}
   - component: {fileID: 6112570683173610380}
   - component: {fileID: 4940441134042591094}
@@ -108,6 +109,19 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8600204976525774808}
   _myExit: {fileID: 0}
   exitVelocity: 5
+--- !u!114 &-1803824039330207074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912044319194764451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d9c88123a4e7240bb99aeccab38b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paths: []
 --- !u!61 &2420909439124677866
 BoxCollider2D:
   m_ObjectHideFlags: 0

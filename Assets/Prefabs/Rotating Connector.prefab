@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5171391832210150204}
   - component: {fileID: 2030883783417532643}
   - component: {fileID: 2224683056884219488}
+  - component: {fileID: 5618776090531873582}
   - component: {fileID: 7679647752241459272}
   m_Layer: 0
   m_Name: Rotating Connector
@@ -123,6 +124,19 @@ MonoBehaviour:
   - first: {fileID: 0}
     second: {fileID: 0}
     angle: 90
+--- !u!114 &5618776090531873582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810020070072266370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d9c88123a4e7240bb99aeccab38b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  paths: []
 --- !u!114 &7679647752241459272
 MonoBehaviour:
   m_ObjectHideFlags: 0

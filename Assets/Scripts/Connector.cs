@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Connections))]
@@ -6,28 +8,43 @@ public class Connector : MonoBehaviour, IActivatable
 {
     [SerializeField] private Connections connectionObj;
     [SerializeField] private ConnectorVisualizer visualizer;
+    [SerializeField] private PathEndPoint thisPathEndPoint;
     private LinkedList<Connection> connections;
-    private LinkedListNode<Connection> currentState;
+    private LinkedListNode<Connection> _currentConnection;
+    public Connection currentConnection => _currentConnection.Value;
 
     private void Awake()
     {
         connections = new LinkedList<Connection>(connectionObj.connections);
-        currentState = connections.First;
-        currentState.Value.first.myExit = currentState.Value.second;
-        currentState.Value.second.myExit = currentState.Value.first;
-        visualizer.ChangeAngle(currentState.Value.angle);
+        _currentConnection = connections.First;
+
+        UpdatePathsActivity();
+        visualizer.ChangeAngle(_currentConnection.Value.angle);
     }
 
     public void NextState()
     {
-        currentState.Value.first.myExit = null;
-        currentState.Value.second.myExit = null;
+        _currentConnection = _currentConnection.Next ?? connections.First;
 
-        currentState = currentState.Next ?? connections.First;
+        UpdatePathsActivity();
+        visualizer.ChangeAngle(_currentConnection.Value.angle);
+    }
 
-        currentState.Value.first.myExit = currentState.Value.second;
-        currentState.Value.second.myExit = currentState.Value.first;
-        visualizer.ChangeAngle(currentState.Value.angle);
+    private void UpdatePathsActivity()
+    {
+        //Turn on all paths from the currentConnection
+        //Turn off all others
+        foreach (Path path in thisPathEndPoint.paths)
+        {
+            if (currentConnection.first == path || currentConnection.second == path)
+            {
+                    path.isActive = true;
+            }
+            else
+            {
+                path.isActive = false;
+            }
+        }
     }
 
     private void Update()
@@ -35,7 +52,7 @@ public class Connector : MonoBehaviour, IActivatable
         if (Input.GetKeyDown(KeyCode.Space))
         {
             NextState();
-            print($"Connecting {currentState.Value.first.name} to {currentState.Value.second.name}");
+            print($"Connecting {_currentConnection.Value.first.name} to {_currentConnection.Value.second.name}");
         }
     }
 

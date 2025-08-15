@@ -1,4 +1,3 @@
-using UnityEditor.MemoryProfiler;
 using UnityEngine;
 
 public class Connections : MonoBehaviour
@@ -9,7 +8,7 @@ public class Connections : MonoBehaviour
 [System.Serializable]
 public class Connection
 {
-    public PipeBehavior first;
-    public PipeBehavior second;
+    public Path first;
+    public Path second;
     public float angle;
 }
