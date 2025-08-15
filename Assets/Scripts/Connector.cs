@@ -1,18 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Connections))]
 public class Connector : MonoBehaviour
 {
-    [SerializeField] private Connection[] connectionsArray;
+    [SerializeField] private Connections connectionObj;
+    [SerializeField] private ConnectorVisualizer visualizer;
     private LinkedList<Connection> connections;
     private LinkedListNode<Connection> currentState;
 
     private void Awake()
     {
-        connections = new LinkedList<Connection>(connectionsArray);
+        connections = new LinkedList<Connection>(connectionObj.connections);
         currentState = connections.First;
         currentState.Value.first.myExit = currentState.Value.second;
         currentState.Value.second.myExit = currentState.Value.first;
+        visualizer.ChangeAngle(currentState.Value.angle);
     }
 
     public void NextState()
@@ -24,6 +27,7 @@ public class Connector : MonoBehaviour
 
         currentState.Value.first.myExit = currentState.Value.second;
         currentState.Value.second.myExit = currentState.Value.first;
+        visualizer.ChangeAngle(currentState.Value.angle);
     }
 
     private void Update()
@@ -34,11 +38,4 @@ public class Connector : MonoBehaviour
             print($"Connecting {currentState.Value.first.name} to {currentState.Value.second.name}");
         }
     }
-}
-
-[System.Serializable]
-public class Connection
-{
-    public PipeBehavior first;
-    public PipeBehavior second;
 }

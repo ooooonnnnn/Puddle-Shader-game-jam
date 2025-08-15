@@ -198,6 +198,8 @@ GameObject:
   - component: {fileID: 581470753}
   - component: {fileID: 581470752}
   - component: {fileID: 581470751}
+  - component: {fileID: 581470755}
+  - component: {fileID: 581470754}
   m_Layer: 0
   m_Name: Hexagon Flat Top
   m_TagString: Untagged
@@ -217,11 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311d7e95ccaa694f821f1acf79d104f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionsArray:
-  - first: {fileID: 1526930531}
-    second: {fileID: 1753171712}
-  - first: {fileID: 102719181}
-    second: {fileID: 1753171712}
+  connectionObj: {fileID: 581470755}
+  visualizer: {fileID: 581470754}
 --- !u!212 &581470752
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -292,6 +291,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &581470754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581470750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41acef89dc4e884ea62abbdacc6bab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &581470755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581470750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0000101b77868f845bea40f65e71f431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections:
+  - first: {fileID: 1526930531}
+    second: {fileID: 1753171712}
+    angle: 0
+  - first: {fileID: 102719181}
+    second: {fileID: 1753171712}
+    angle: 90
 --- !u!1001 &926260653
 PrefabInstance:
   m_ObjectHideFlags: 0
