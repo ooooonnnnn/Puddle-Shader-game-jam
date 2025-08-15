@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Serialization;
 
 public class ButtonController : MonoBehaviour
 {
-    [SerializeField] private MonoBehaviour activatable;
+    [SerializeField] private List<MonoBehaviour> activateables;
     [SerializeField] private Transform movingPart;
     [SerializeField] private float pressedHeight;
     [SerializeField] private float releasedHeight;
@@ -11,7 +13,11 @@ public class ButtonController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        (activatable as IActivatable).Activate();
+        foreach (var activatable in activateables)
+        {
+            (activatable as IActivatable)?.Activate();
+        }
+
         StopAllCoroutines();
         StartCoroutine(MoveIn(pressedHeight));
     }

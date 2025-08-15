@@ -7,7 +7,6 @@ public class PipeBehavior : MonoBehaviour
     [SerializeField] private Color connectedColor;
     [SerializeField] private Color disconnectedColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    private bool isTeleporting = false;
 
     public PipeBehavior myExit
     {
@@ -34,13 +33,13 @@ public class PipeBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isTeleporting)
+        if (!other.GetComponent<Controller>().isTeleporting)
             StartCoroutine(EnterPipe(other.gameObject));
     }
     
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!isTeleporting)
+        if (!other.GetComponent<Controller>().isTeleporting)
             StartCoroutine(EnterPipe(other.gameObject));
     }
 
@@ -49,12 +48,13 @@ public class PipeBehavior : MonoBehaviour
         if (myExit == null)
             yield break;
 
-        isTeleporting = true;
+        player.GetComponent<Controller>().isTeleporting = true;
 
         var playerRigidbody = player.GetComponent<Rigidbody2D>();
 
         // Get original speed before teleport
-        float originalSpeed = playerRigidbody.linearVelocity.magnitude;
+        float originalSpeed = Mathf.Abs(playerRigidbody.linearVelocity.magnitude);
+        Debug.Log($"{gameObject.name}: {originalSpeed}");
 
         // Move player to exit position
         Vector2 exitPosition = (Vector2)myExit.transform.position + (Vector2)myExit.transform.up * 1.5f;
@@ -64,8 +64,7 @@ public class PipeBehavior : MonoBehaviour
         float newSpeed = originalSpeed + exitVelocity;
         playerRigidbody.linearVelocity = (Vector2)myExit.transform.up * newSpeed;
 
-        // Wait a short time to prevent retriggering
         yield return new WaitForSeconds(0.2f);
-        isTeleporting = false;
+        player.GetComponent<Controller>().isTeleporting = false;
     }
 }
