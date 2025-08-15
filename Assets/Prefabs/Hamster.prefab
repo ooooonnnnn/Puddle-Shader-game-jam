@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9125851579076618796}
   - component: {fileID: 4285330301439701825}
   - component: {fileID: 593861045228832664}
-  - component: {fileID: 2370948448445653003}
   m_Layer: 0
   m_Name: Hamster
   m_TagString: Untagged
@@ -80,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1489384157932011176, guid: a7c18660f379eea439a1d4450ae6453e, type: 3}
+  m_Sprite: {fileID: 2845072337739858393, guid: b25fefa4d6134fd4ba00da5c6ecab149, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,16 +169,4 @@ MonoBehaviour:
   torque: 5
   airForce: 5
   maxControlAngularSpeed: 360
---- !u!114 &2370948448445653003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7115097173830504138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6be7cf1cfa47cb44aaaa7021cfc76bf8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
+  isTeleporting: 0

@@ -11,6 +11,8 @@ public class Controller : MonoBehaviour
     //private float jumpVelocity;
     private bool isGrounded;
     private float oneOverRadius;
+    
+    public bool isTeleporting = false;
 
     private void Awake()
     {

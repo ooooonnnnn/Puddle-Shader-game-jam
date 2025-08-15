@@ -6,6 +6,7 @@ public class PipeBehavior : MonoBehaviour
     [SerializeField] private Color connectedColor;
     [SerializeField] private Color disconnectedColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private float maxExitSpeed = 25f;
     [SerializeField] private PathEndPoint thisEndPoint;
     private bool isTeleporting = false;
 

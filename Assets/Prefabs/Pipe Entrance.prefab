@@ -156,7 +156,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,7 +166,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.1, y: 0.05}
+  m_Size: {x: 0.1, y: 0.5}
   m_EdgeRadius: 0
 --- !u!61 &6112570683173610380
 BoxCollider2D:
@@ -262,7 +262,7 @@ LineRenderer:
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.25
+    widthMultiplier: 2.5
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -305,14 +305,14 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 10
+    numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
-    textureMode: 3
-    textureScale: {x: 1, y: 1}
+    alignment: 1
+    textureMode: 1
+    textureScale: {x: 0.3, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
