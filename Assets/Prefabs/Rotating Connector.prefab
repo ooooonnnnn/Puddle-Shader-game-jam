@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1227513949
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: -7470516057852898323, guid: 62806d2bf32e14b40a72b7ac249078c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -105,6 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionObj: {fileID: 2224683056884219488}
   visualizer: {fileID: 7679647752241459272}
+  thisPathEndPoint: {fileID: 0}
 --- !u!114 &2224683056884219488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paths: []
+  exitSpeedBoost: 5
+  maxExitSpeed: 25
 --- !u!114 &7679647752241459272
 MonoBehaviour:
   m_ObjectHideFlags: 0
