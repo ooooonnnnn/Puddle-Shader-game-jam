@@ -7,7 +7,8 @@ public class MoveLineToPoint : MonoBehaviour
     [SerializeField] private Transform followTarget;
     private LineRenderer path;
     private int posCount;
-    private void OnValidate()
+
+    public void MoveLine()
     {
         path = GetComponent<LineRenderer>();
         posCount = path.positionCount;
@@ -18,11 +19,6 @@ public class MoveLineToPoint : MonoBehaviour
             path.SetPosition(i, position);
         }
 
-        
-    }
-
-    public void MoveLine()
-    {
         if (followTarget == null)
             return;
 
