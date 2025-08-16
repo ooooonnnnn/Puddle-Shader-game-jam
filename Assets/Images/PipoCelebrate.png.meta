@@ -335,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PipoCelebrate_0: -7678890040846202188
+      PipoCelebrate_1: 4692517936688407177
+      PipoCelebrate_2: -7451599790965886436
+      PipoCelebrate_3: 9171582829179990064
+      PipoCelebrate_4: -2999061600434551254
+      PipoCelebrate_5: 483873864356733884
+      PipoCelebrate_6: -2266997585190284104
+      PipoCelebrate_7: -2946501668129164521
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

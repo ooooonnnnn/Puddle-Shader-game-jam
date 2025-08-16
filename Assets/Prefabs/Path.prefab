@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   path: {fileID: 585130149687816978}
   isActive: 1
-  totalLength: 137.3144
+  totalLength: 145.39174
 --- !u!120 &585130149687816978
 LineRenderer:
   serializedVersion: 2
