@@ -78,6 +78,7 @@ public class PathFollower : MonoBehaviour
         speed = Mathf.Clamp(speed, 10f, initialVelocity * 5f);
         oneOverSpeed = 1f / speed;
         rb.bodyType = RigidbodyType2D.Static;
+        yield return TweenPosition(transform.position, endPoints[0].transform.position);
         for (int i = 0; i < paths.Count; i++)
         {
             transform.position = endPoints[i].transform.position;
