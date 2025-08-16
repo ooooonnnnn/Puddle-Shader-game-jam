@@ -102,6 +102,22 @@ PrefabInstance:
       propertyPath: disableCameraOnEnter
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6382307460499366062, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: connectedColor.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382307460499366062, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: connectedColor.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600204976525774808, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 8600204976525774808, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: m_Color.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -581,6 +597,30 @@ PrefabInstance:
       propertyPath: m_Positions.Array.data[30].z
       value: -16.901608
       objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 585130149687816978, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 814346329381321935, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
       propertyPath: m_Name
       value: Path
@@ -714,6 +754,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe Entrance With Events
       objectReference: {fileID: 0}
+    - target: {fileID: 5137777561832674906, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
+      propertyPath: m_Color.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137777561832674906, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
+      propertyPath: m_Color.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
     - target: {fileID: 6260173027811947292, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
       propertyPath: maxExitSpeed
       value: 5
@@ -726,6 +774,14 @@ PrefabInstance:
       propertyPath: 'paths.Array.data[0]'
       value: 
       objectReference: {fileID: 6104205416518375102}
+    - target: {fileID: 7531601283539286316, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
+      propertyPath: connectedColor.b
+      value: 0.41960785
+      objectReference: {fileID: 0}
+    - target: {fileID: 7531601283539286316, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
+      propertyPath: connectedColor.g
+      value: 0.91764706
+      objectReference: {fileID: 0}
     - target: {fileID: 8421955469026148486, guid: 8e069d8789e28ce4da511d17729387e9, type: 3}
       propertyPath: enableCameraOnExit
       value: 0
