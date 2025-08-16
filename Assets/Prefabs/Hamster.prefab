@@ -116,7 +116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &4285330301439701825
 CircleCollider2D:
@@ -170,6 +170,9 @@ MonoBehaviour:
   torque: 5
   airForce: 5
   maxControlAngularSpeed: 360
+  minBouncySpeed: 5
+  bouncyMaterial: {fileID: 6200000, guid: 872f058731e9da9419cb0e7a010e6803, type: 2}
+  normalMaterial: {fileID: 6200000, guid: fad562154e5553b4486e453900097261, type: 2}
   isTeleporting: 0
 --- !u!114 &-170720149842148522
 MonoBehaviour:

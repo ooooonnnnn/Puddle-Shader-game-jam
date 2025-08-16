@@ -50,5 +50,6 @@ public class Connector : MonoBehaviour, IActivatable
     public void Activate()
     {
         NextState();
+        PathEndPoint.InvokeChangeState();
     }
 }

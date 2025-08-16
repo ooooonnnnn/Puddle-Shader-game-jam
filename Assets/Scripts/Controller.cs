@@ -8,6 +8,9 @@ public class Controller : MonoBehaviour
     [SerializeField] private float airForce;
     //[SerializeField] private float jumpHeight;
     [SerializeField] private float maxControlAngularSpeed;
+    [SerializeField] private float minBouncySpeed;
+    [SerializeField] private PhysicsMaterial2D bouncyMaterial;
+    [SerializeField] private PhysicsMaterial2D normalMaterial;
     //private float jumpVelocity;
     private bool isGrounded;
     private float oneOverRadius;
@@ -45,15 +48,14 @@ public class Controller : MonoBehaviour
 
         float totalTorque = -horizontalInput * torque;
         rb.AddTorque(totalTorque);
+
+        LimitBounceOnLowSpeed();
     }
 
-    private void Update()
+    private void LimitBounceOnLowSpeed()
     {
-        //if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        //{
-        //    rb.linearVelocity += jumpVelocity * Vector2.up;
-        //    return;
-        //}
+        rb.sharedMaterial = rb.linearVelocity.magnitude < minBouncySpeed ? normalMaterial : bouncyMaterial;
+        print($"Material: {rb.sharedMaterial.name}, Speed: {rb.linearVelocity.magnitude}");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
