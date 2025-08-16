@@ -9,16 +9,6 @@ public class Path : MonoBehaviour
     public bool isActive = true;
     public float totalLength;
 
-    private void Awake()
-    {
-        for (int i = 0; i < path.positionCount; i++)
-        {
-            Vector3 position = path.GetPosition(i);
-            position.z = 0f; // Ensure z position is 0 for 2D
-            path.SetPosition(i, position);
-        }
-    }
-
     private void OnValidate()
     {
         path = GetComponent<LineRenderer>();
@@ -31,6 +21,12 @@ public class Path : MonoBehaviour
             Vector3 next = pathPos[i];
             totalLength += Vector3.Distance(curr, next);
             curr = next;
+        }
+        for (int i = 0; i < path.positionCount; i++)
+        {
+            Vector3 position = path.GetPosition(i);
+            position.z = 0f; // Ensure z position is 0 for 2D
+            path.SetPosition(i, position);
         }
     }
 }

@@ -24,6 +24,11 @@ public class Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (rb.bodyType != RigidbodyType2D.Dynamic)
+        {
+            return;
+        }
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         float angSpeed = rb.angularVelocity;
         if (angSpeed > maxControlAngularSpeed)

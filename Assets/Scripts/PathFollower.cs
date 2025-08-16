@@ -23,7 +23,7 @@ public class PathFollower : MonoBehaviour
     }
 
     private IEnumerator FollowPathsToTarget(PathEndPoint origin)
-    { 
+    {
         PathEndPoint currentPoint = origin;
         PathEndPoint prevPoint = null;
         List<PathEndPoint> endPoints = new List<PathEndPoint>();
@@ -33,40 +33,50 @@ public class PathFollower : MonoBehaviour
         do
         {
             endPoints.Add(currentPoint);
-            print($"{currentPoint.paths.Where(p => p.isActive).Count()} active paths from {currentPoint.gameObject.name}");
+            print(
+                $"{currentPoint.paths.Where(p => p.isActive).Count()} active paths from {currentPoint.gameObject.name}");
 
             //Find next path segment
             Path nextPath;
             if (prevPoint == null)
             {
                 nextPath = currentPoint.paths.Find(path =>
-                { return path.isActive && path.endPoints.Contains(currentPoint); });
+                {
+                    return path.isActive && path.endPoints.Contains(currentPoint);
+                });
             }
             else
             {
                 nextPath = currentPoint.paths.Find(path =>
-                {return path.isActive && !path.endPoints.Contains(prevPoint); });
+                {
+                    return path.isActive && !path.endPoints.Contains(prevPoint);
+                });
             }
+
             if (nextPath == null)
             {
                 yield break;
             }
+
             paths.Add(nextPath);
 
             //Find next point
             prevPoint = currentPoint;
             currentPoint = nextPath.endPoints.Find(ep => ep != currentPoint);
             print($"next end point {currentPoint.gameObject.name}");
-
         } while (!currentPoint.isEntrance);
 
         endPoints.Add(currentPoint);
 
-        print($"Found {endPoints.Count} end points and {paths.Count} paths from {origin.gameObject.name} to {currentPoint.gameObject.name}");
+        print(
+            $"Found {endPoints.Count} end points and {paths.Count} paths from {origin.gameObject.name} to {currentPoint.gameObject.name}");
         print($"Paths: {string.Join(", ", paths.Select(path => path.gameObject.name))}");
         print($"End Points: {string.Join(", ", endPoints.Select(ep => ep.gameObject.name))}");
 
         // Move through the path
+        float initialVelocity = rb.linearVelocity.magnitude;
+        speed = Mathf.Clamp(speed, 10f, initialVelocity * 5f);
+        oneOverSpeed = 1f / speed;
         rb.bodyType = RigidbodyType2D.Static;
         for (int i = 0; i < paths.Count; i++)
         {
@@ -77,7 +87,8 @@ public class PathFollower : MonoBehaviour
                 .Select(j => paths[i].path.GetPosition(j))
                 .ToList();
             //follow the path in the correct direction
-            bool flip = (pathPos[pathPos.Count - 1] - transform.position).magnitude < (pathPos[0] - transform.position).magnitude;
+            bool flip = (pathPos[pathPos.Count - 1] - transform.position).magnitude <
+                        (pathPos[0] - transform.position).magnitude;
 
             float totalLength = paths[i].totalLength;
             for (int j = 0; j < paths[i].path.positionCount; j++)
@@ -87,9 +98,15 @@ public class PathFollower : MonoBehaviour
                 yield return TweenPosition(transform.position, paths[i].path.GetPosition(k));
             }
         }
+
         rb.bodyType = RigidbodyType2D.Dynamic;
+        endPoints.Last().DisableTrigger();
         // Final position at the last end point
-        transform.position = endPoints.Last().transform.position + endPoints.Last().transform.up * 1.5f; // Adjust for exit position
+        transform.position =
+            endPoints.Last().transform.position; // Adjust for exit position
+        rb.linearVelocity = endPoints.Last().transform.up *
+                      Mathf.Clamp(initialVelocity + endPoints.Last().exitSpeedBoost,
+                          0, endPoints.Last().maxExitSpeed);
     }
 
     private IEnumerator TweenPosition(Vector3 start, Vector3 end)
@@ -103,6 +120,7 @@ public class PathFollower : MonoBehaviour
             transform.position = Vector3.Lerp(start, end, t);
             yield return null;
         }
+
         transform.position = end; // Ensure final position is set
     }
 }
