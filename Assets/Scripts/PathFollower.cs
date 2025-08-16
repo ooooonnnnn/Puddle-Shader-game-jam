@@ -10,12 +10,14 @@ public class PathFollower : MonoBehaviour
     private float oneOverSpeed;
     [SerializeField] private Rigidbody2D rb;
     private SpriteRenderer rbSpriteRenderer;
+    private PipeTravesalSound pipeTravesalSound;
 
     private void OnValidate()
     {
         rb = GetComponent<Rigidbody2D>();
         rbSpriteRenderer = rb.GetComponent<SpriteRenderer>();
         oneOverSpeed = 1f / speed;
+        pipeTravesalSound = GetComponent<PipeTravesalSound>();
     }
 
     public void StartFollow(PathEndPoint origin)
@@ -69,7 +71,10 @@ public class PathFollower : MonoBehaviour
 
         endPoints.Add(currentPoint);
 
-        
+
+        // Start traversal sound
+        pipeTravesalSound.StartSound();
+
         // Move through the path
         float initialVelocity = rb.linearVelocity.magnitude;
         speed = Mathf.Clamp(speed, 10f, initialVelocity * 5f);
@@ -109,6 +114,9 @@ public class PathFollower : MonoBehaviour
         rbSpriteRenderer.sortingLayerName = "Default";
         //Call event on final end point
         endPoints.Last().GetComponent<EntranceEvents>()?.InvokeExit();
+
+        // Stop traversal sound
+        pipeTravesalSound.StopSound();
     }
 
     private IEnumerator TweenPosition(Vector3 start, Vector3 end)
