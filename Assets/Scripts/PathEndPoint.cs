@@ -93,7 +93,10 @@ public class PathEndPoint : MonoBehaviour
     private void Awake()
     {
         if (isEntrance)
-            OnChangeState += UpdateStateColor;
+        {
+            OnChangeState += UpdateStateColor; 
+            UpdateStateColor();
+        }
     }
 
     private void OnDestroy()
