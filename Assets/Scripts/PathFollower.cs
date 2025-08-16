@@ -133,4 +133,16 @@ public class PathFollower : MonoBehaviour
 
         transform.position = end; // Ensure final position is set
     }
+
+    private void Update()
+    {
+        if (rb.bodyType == RigidbodyType2D.Dynamic)
+        {
+            return;
+        }
+
+        float rot = rb.rotation;
+        rot -= (720 * Time.deltaTime) % 360;
+        rb.rotation = rot;
+    }
 }
