@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 247296530632088678}
   - component: {fileID: 6441173495020808872}
   - component: {fileID: 5543375495786156915}
+  - component: {fileID: 7635259557882718281}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -205,10 +206,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adf06d22be63bd4e875ca77800c226f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 247296530632088678}
+  myCamera: {fileID: 247296530632088678}
   targetRb: {fileID: 0}
   multiplier: 1
   minFov: 60
   maxFov: 64
   forceFovDuration: 1
   cinemachineFollow: {fileID: 6740862205807914267}
+--- !u!81 &7635259557882718281
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984638122898002415}
+  m_Enabled: 1
