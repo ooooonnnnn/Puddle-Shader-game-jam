@@ -47,15 +47,6 @@ public class Connector : MonoBehaviour, IActivatable
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            NextState();
-            print($"Connecting {_currentConnection.Value.first.name} to {_currentConnection.Value.second.name}");
-        }
-    }
-
     public void Activate()
     {
         NextState();
