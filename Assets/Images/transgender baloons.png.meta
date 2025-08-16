@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 24e60c39e90f6144fbed96a59a734c8b
+guid: 1d64ac69b4447764e9a481140f56d41f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8599140558653082143
-    second: modern-skyline-abstract-style-skyscraper-buildings-on-white-background-city-skyline-and-water-reflection-panama-city-MDH9XJ_0
+      213: 126251551006932600
+    second: transgender baloons_0
+  - first:
+      213: -3774185746279520306
+    second: transgender baloons_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +129,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: modern-skyline-abstract-style-skyscraper-buildings-on-white-background-city-skyline-and-water-reflection-panama-city-MDH9XJ_0
+      name: transgender baloons_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1300
-        height: 956
+        width: 100
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1e534dbd837b9a880800000000000000
-      internalID: -8599140558653082143
+      spriteID: 87e3c12ed1980c100800000000000000
+      internalID: 126251551006932600
       vertices: []
       indices: 
       edges: []
@@ -151,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7e4f0a4c43d4bef4ca22e27b191ea7d2
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +163,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      transgender baloons_0: 126251551006932600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

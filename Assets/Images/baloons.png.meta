@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 8006d7ad768db464e876bfaa25e87825
+guid: d12716214f2d6aa46a3b6c03fed8017c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3587798969095955554
-    second: syrian-hamster-white-background_369656-945_0
+      213: -2448322271405103051
+    second: baloons_0
+  - first:
+      213: 1553916519565887251
+    second: baloons_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,7 +51,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -126,23 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: syrian-hamster-white-background_369656-945_0
+      name: baloons_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 626
-        height: 417
+        width: 100
+        height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9bd589b8d3953ec0800000000000000
-      internalID: -3587798969095955554
+      spriteID: 538a83daddfc50ed0800000000000000
+      internalID: -2448322271405103051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: baloons_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 0
+        width: 94
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 317065f67de909510800000000000000
+      internalID: 1553916519565887251
       vertices: []
       indices: 
       edges: []
@@ -151,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: efec173fae72a3a4b9fc54fad560695c
     internalID: 0
     vertices: []
     indices: 
@@ -160,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      baloons_0: -2448322271405103051
+      baloons_1: 1553916519565887251
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
