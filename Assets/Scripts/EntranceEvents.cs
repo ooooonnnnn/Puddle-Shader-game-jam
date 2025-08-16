@@ -11,6 +11,7 @@ public class EntranceEvents : MonoBehaviour
     [SerializeField] private bool disableEntranceOnExit;
     [SerializeField] private PathEndPoint endPoint;
     [SerializeField] private CinemachineFollow cinemachineFollow;
+    [SerializeField] private CameraBehavior cameraBehavior;
 
     private void OnValidate()
     {
@@ -20,7 +21,10 @@ public class EntranceEvents : MonoBehaviour
     private void Awake()
     {
         if (enableCameraOnExit)
+        {
             OnExit += () => cinemachineFollow.enabled = true;
+            OnExit += cameraBehavior.ForceMinFov;
+        }
         if (disableCameraOnEnter)
             OnEnter += () => cinemachineFollow.enabled = false;
         if (disableEntranceOnExit)
