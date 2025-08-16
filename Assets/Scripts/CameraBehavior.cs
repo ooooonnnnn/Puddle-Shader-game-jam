@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Unity.Cinemachine;
 
 public class CameraBehavior : MonoBehaviour
 {
@@ -9,10 +10,16 @@ public class CameraBehavior : MonoBehaviour
     [SerializeField] private float minFov = 60f;
     [SerializeField] private float maxFov = 64f;
     [SerializeField] private float forceFovDuration = 1f;
+    [SerializeField] private CinemachineFollow cinemachineFollow;
     private float fovVelocity = 0f;
     private bool fovBySpeed = true;
     private float targetFov;
     private float forceFovPerc = 0;
+
+    private void OnValidate()
+    {
+        cinemachineFollow = GetComponent<CinemachineFollow>();
+    }
 
     void FixedUpdate()
     {
@@ -20,16 +27,24 @@ public class CameraBehavior : MonoBehaviour
         if (!fovBySpeed)
         {
             targetFov = Mathf.Lerp(targetFov, minFov, forceFovPerc);
+            print($"Target: {targetFov}");
         }
 
         camera.fieldOfView = Mathf.Clamp(
-            Mathf.SmoothDamp(camera.fieldOfView, targetFov, ref fovVelocity, 0.3f),
+            Mathf.SmoothDamp(camera.fieldOfView, targetFov, ref fovVelocity, 1f),
             minFov, maxFov
         );
+
+        if (!fovBySpeed)
+            print(camera.fieldOfView);
     }
 
     public void ForceMinFov()
     {
+        //cinemachineFollow.ForceCameraPosition(cinemachineFollow.FollowOffset, Quaternion.identity);
+        Vector3 cameraPos = transform.position;
+        cameraPos.z = -10f; 
+        transform.position = cameraPos;
         StartCoroutine(ForceMinFovDuration());
     }
 
