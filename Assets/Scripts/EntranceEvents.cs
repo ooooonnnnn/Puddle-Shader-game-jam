@@ -1,0 +1,39 @@
+using System;
+using Unity.Cinemachine;
+using UnityEngine;
+
+public class EntranceEvents : MonoBehaviour
+{
+    private event Action OnEnter;
+    private event Action OnExit;
+    [SerializeField] private bool enableCameraOnExit;
+    [SerializeField] private bool disableCameraOnEnter;
+    [SerializeField] private bool disableEntranceOnExit;
+    [SerializeField] private PathEndPoint endPoint;
+    [SerializeField] private CinemachineFollow cinemachineFollow;
+
+    private void OnValidate()
+    {
+        endPoint = GetComponent<PathEndPoint>();
+    }
+
+    private void Awake()
+    {
+        if (enableCameraOnExit)
+            OnExit += () => cinemachineFollow.enabled = true;
+        if (disableCameraOnEnter)
+            OnEnter += () => cinemachineFollow.enabled = false;
+        if (disableEntranceOnExit)
+            OnExit += () => endPoint.paths[0].isActive = false;
+    }
+
+    public void InvokeEnter()
+    {
+        OnEnter?.Invoke();
+    }
+
+    public void InvokeExit()
+    {
+        OnExit?.Invoke();
+    }
+}
