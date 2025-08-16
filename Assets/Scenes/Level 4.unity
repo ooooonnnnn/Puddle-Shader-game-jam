@@ -2738,6 +2738,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 127484851}
     m_Modifications:
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: maxExitSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: exitSpeedBoost
       value: 0
       objectReference: {fileID: 0}
@@ -3709,11 +3713,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: maxExitSpeed
-      value: 25
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: exitSpeedBoost
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: paths.Array.size
@@ -4022,8 +4026,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 127484851}
     m_Modifications:
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
+      propertyPath: maxExitSpeed
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: exitSpeedBoost
-      value: 7
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: -1803824039330207074, guid: 10943c36050be0a458e0600e783449a6, type: 3}
       propertyPath: paths.Array.size
