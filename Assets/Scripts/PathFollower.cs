@@ -9,10 +9,12 @@ public class PathFollower : MonoBehaviour
     [SerializeField] private float speed;
     private float oneOverSpeed;
     [SerializeField] private Rigidbody2D rb;
+    private SpriteRenderer rbSpriteRenderer;
 
     private void OnValidate()
     {
         rb = GetComponent<Rigidbody2D>();
+        rbSpriteRenderer = rb.GetComponent<SpriteRenderer>();
         oneOverSpeed = 1f / speed;
     }
 
@@ -67,11 +69,13 @@ public class PathFollower : MonoBehaviour
 
         endPoints.Add(currentPoint);
 
+        
         // Move through the path
         float initialVelocity = rb.linearVelocity.magnitude;
         speed = Mathf.Clamp(speed, 10f, initialVelocity * 5f);
         oneOverSpeed = 1f / speed;
         rb.bodyType = RigidbodyType2D.Static;
+        rbSpriteRenderer.sortingLayerName = "Foreground";
         yield return TweenPosition(transform.position, endPoints[0].transform.position);
         for (int i = 0; i < paths.Count; i++)
         {
@@ -101,7 +105,8 @@ public class PathFollower : MonoBehaviour
         rb.linearVelocity = endPoints.Last().transform.up *
                       Mathf.Clamp(initialVelocity + endPoints.Last().exitSpeedBoost,
                           0, endPoints.Last().maxExitSpeed);
-
+        
+        rbSpriteRenderer.sortingLayerName = "Default";
         //Call event on final end point
         endPoints.Last().GetComponent<EntranceEvents>()?.InvokeExit();
     }

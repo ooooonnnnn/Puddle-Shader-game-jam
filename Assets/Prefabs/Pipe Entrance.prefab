@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d63f7309cc9ea459e8b6e117ce93d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exitSound: {fileID: 8300000, guid: 735d8e62e41b44041a9fd71b966103f1, type: 3}
+  exitSound: {fileID: 8300000, guid: 96ff2050ab5986a48a114c717f25c8ea, type: 3}
   enterSound: {fileID: 0}
 --- !u!61 &2420909439124677866
 BoxCollider2D:
@@ -294,7 +294,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Positions: []
   m_Parameters:
     serializedVersion: 3
