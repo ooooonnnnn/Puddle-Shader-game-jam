@@ -1651,11 +1651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!20 &396575608 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 247296530632088678, guid: 7817ecbe39dfdf24da30a5c5c799e00f, type: 3}
-  m_PrefabInstance: {fileID: 3599675051993741899}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399589758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2517,7 +2512,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 0
+  m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -12091,10 +12086,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5543375495786156915, guid: 7817ecbe39dfdf24da30a5c5c799e00f, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 396575608}
     - target: {fileID: 5543375495786156915, guid: 7817ecbe39dfdf24da30a5c5c799e00f, type: 3}
       propertyPath: targetRb
       value: 

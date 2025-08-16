@@ -1,10 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine.Serialization;
 
 public class CameraBehavior : MonoBehaviour
 {
-    [SerializeField] private Camera camera;
+    [FormerlySerializedAs("camera")] [SerializeField] private Camera myCamera;
     [SerializeField] private Rigidbody2D targetRb;
     [SerializeField] private float multiplier = 1f;
     [SerializeField] private float minFov = 60f;
@@ -27,12 +28,16 @@ public class CameraBehavior : MonoBehaviour
         if (!fovBySpeed)
         {
             targetFov = Mathf.Lerp(targetFov, minFov, forceFovPerc);
+            print($"Target: {targetFov}");
         }
 
-        camera.fieldOfView = Mathf.Clamp(
-            Mathf.SmoothDamp(camera.fieldOfView, targetFov, ref fovVelocity, 1f),
+        myCamera.fieldOfView = Mathf.Clamp(
+            Mathf.SmoothDamp(myCamera.fieldOfView, targetFov, ref fovVelocity, 1f),
             minFov, maxFov
         );
+
+        if (!fovBySpeed)
+            print(myCamera.fieldOfView);
     }
 
     public void ForceMinFov()
