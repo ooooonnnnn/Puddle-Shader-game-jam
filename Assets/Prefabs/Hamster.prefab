@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 9125851579076618796}
-  torque: 5
-  airForce: 5
+  torque: 10
+  airForce: 15
   maxControlAngularSpeed: 360
   minBouncySpeed: 5
   bouncyMaterial: {fileID: 6200000, guid: 872f058731e9da9419cb0e7a010e6803, type: 2}
@@ -299,4 +299,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6555da92d0a0147ae7e03d727cfdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pipeSound: {fileID: 8300000, guid: cf81a66112e6869428ad76e2f64f16bd, type: 3}
