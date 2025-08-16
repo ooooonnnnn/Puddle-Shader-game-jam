@@ -126,6 +126,7 @@ MonoBehaviour:
   paths: []
   exitSpeedBoost: 5
   maxExitSpeed: 25
+  inactiveTint: {r: 0.71599996, g: 0.71599996, b: 0.71599996, a: 1}
 --- !u!114 &4969676302382110980
 MonoBehaviour:
   m_ObjectHideFlags: 0

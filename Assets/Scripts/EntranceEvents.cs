@@ -28,7 +28,10 @@ public class EntranceEvents : MonoBehaviour
         if (disableCameraOnEnter)
             OnEnter += () => cinemachineFollow.enabled = false;
         if (disableEntranceOnExit)
+        {
             OnExit += () => endPoint.paths[0].isActive = false;
+            OnExit += endPoint.UpdateStateColor;
+        }
     }
 
     public void InvokeEnter()
