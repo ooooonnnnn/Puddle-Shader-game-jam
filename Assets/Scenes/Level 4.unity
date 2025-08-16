@@ -4750,6 +4750,10 @@ PrefabInstance:
       propertyPath: airForce
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 593861045228832664, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
+      propertyPath: minBouncySpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3185021854995658849, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.46
@@ -4797,6 +4801,10 @@ PrefabInstance:
     - target: {fileID: 7115097173830504138, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
       propertyPath: m_Name
       value: Hamster
+      objectReference: {fileID: 0}
+    - target: {fileID: 9125851579076618796, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
