@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EntranceEvents : MonoBehaviour
 {
-    private event Action OnEnter;
-    private event Action OnExit;
+    public event Action OnEnter;
+    public event Action OnExit;
     [SerializeField] private bool enableCameraOnExit;
     [SerializeField] private bool disableCameraOnEnter;
     [SerializeField] private bool disableEntranceOnExit;
