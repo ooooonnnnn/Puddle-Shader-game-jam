@@ -27,16 +27,12 @@ public class CameraBehavior : MonoBehaviour
         if (!fovBySpeed)
         {
             targetFov = Mathf.Lerp(targetFov, minFov, forceFovPerc);
-            print($"Target: {targetFov}");
         }
 
         camera.fieldOfView = Mathf.Clamp(
             Mathf.SmoothDamp(camera.fieldOfView, targetFov, ref fovVelocity, 1f),
             minFov, maxFov
         );
-
-        if (!fovBySpeed)
-            print(camera.fieldOfView);
     }
 
     public void ForceMinFov()
