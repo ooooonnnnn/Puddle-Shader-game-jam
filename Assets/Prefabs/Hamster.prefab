@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9125851579076618796}
   - component: {fileID: 4285330301439701825}
   - component: {fileID: 593861045228832664}
+  - component: {fileID: -170720149842148522}
   m_Layer: 0
   m_Name: Hamster
   m_TagString: Untagged
@@ -170,3 +171,17 @@ MonoBehaviour:
   airForce: 5
   maxControlAngularSpeed: 360
   isTeleporting: 0
+--- !u!114 &-170720149842148522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115097173830504138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6be7cf1cfa47cb44aaaa7021cfc76bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  rb: {fileID: 9125851579076618796}

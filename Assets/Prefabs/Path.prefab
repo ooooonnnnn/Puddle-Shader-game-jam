@@ -50,7 +50,7 @@ MonoBehaviour:
   - {fileID: 0}
   path: {fileID: 585130149687816978}
   isActive: 1
-  totalLength: 143.3724
+  totalLength: 125.18645
 --- !u!120 &585130149687816978
 LineRenderer:
   serializedVersion: 2
@@ -148,11 +148,11 @@ LineRenderer:
       m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 10
+    numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
-    textureMode: 3
-    textureScale: {x: 1, y: 1}
+    alignment: 1
+    textureMode: 1
+    textureScale: {x: 0.5, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
