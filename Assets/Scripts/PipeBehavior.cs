@@ -6,11 +6,11 @@ public class PipeBehavior : MonoBehaviour
     [SerializeField] private Color connectedColor;
     [SerializeField] private Color disconnectedColor;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private float maxExitSpeed = 25f;
+    //[SerializeField] private float maxExitSpeed = 25f;
     [SerializeField] private PathEndPoint thisEndPoint;
     private bool isTeleporting = false;
 
-    [SerializeField] private float exitVelocity = 5f;
+    //[SerializeField] private float exitVelocity = 5f;
 
     private void OnValidate()
     {
@@ -20,7 +20,7 @@ public class PipeBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!isTeleporting)
-            StartCoroutine(myEnterPipe(other.gameObject.GetComponent<PathFollower>()));
+            StartCoroutine(MyEnterPipe(other.gameObject.GetComponent<PathFollower>()));
     }
     
     //private void OnTriggerStay2D(Collider2D other)
@@ -28,7 +28,7 @@ public class PipeBehavior : MonoBehaviour
     //        StartCoroutine(myEnterPipe(other.GetComponent<PathFollower>()));
     //}
 
-    private IEnumerator myEnterPipe(PathFollower pathFollower)
+    private IEnumerator MyEnterPipe(PathFollower pathFollower)
     {
         if (!isTeleporting)
         {

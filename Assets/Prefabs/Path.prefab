@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &909583303370880995
+--- !u!1 &814346329381321935
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8336366459945377187}
-  - component: {fileID: 7892502510104890443}
+  - component: {fileID: 3711201055790031920}
+  - component: {fileID: 7951499122644005778}
+  - component: {fileID: 585130149687816978}
   m_Layer: 0
-  m_Name: DisconnectedPath
+  m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8336366459945377187
+--- !u!4 &3711201055790031920
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909583303370880995}
+  m_GameObject: {fileID: 814346329381321935}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -0.28290156, y: 1.4655616, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!120 &7892502510104890443
+--- !u!114 &7951499122644005778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814346329381321935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2dbdd77205917498beefe985c45a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  path: {fileID: 585130149687816978}
+  isActive: 1
+  totalLength: 129.23708
+--- !u!120 &585130149687816978
 LineRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909583303370880995}
+  m_GameObject: {fileID: 814346329381321935}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -76,18 +95,14 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Positions:
-  - {x: 1.8516738, y: -4.445398, z: -1.2606578}
-  - {x: 2.3557215, y: -4.445398, z: -1.2606578}
-  - {x: 2.8597693, y: -4.457999, z: -1.2606578}
-  - {x: 3.363817, y: -4.457999, z: -1.2606578}
-  - {x: 3.8678648, y: -4.4832015, z: -1.2606578}
-  - {x: 4.3719125, y: -4.4832015, z: -1.2606578}
-  - {x: 4.8759604, y: -4.4832015, z: -1.2606578}
+  - {x: -0.009445518, y: 2.0596213, z: 0}
+  - {x: 0.028273106, y: 3.0591502, z: 0}
+  - {x: 0.06599119, y: 4.077538, z: 0}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.3
+    widthMultiplier: 1.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -130,13 +145,13 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 10
     numCapVertices: 0
     alignment: 0
-    textureMode: 1
+    textureMode: 3
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0

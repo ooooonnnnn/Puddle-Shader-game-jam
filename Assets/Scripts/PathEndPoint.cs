@@ -1,10 +1,13 @@
+using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class PathEndPoint : MonoBehaviour
 {
     [SerializeField] public List<Path> paths;
-    public bool isEntrance => paths.Count == 1; 
+    [SerializeField] public float exitSpeedBoost = 5f;
+    [SerializeField] public float maxExitSpeed = 25f;
+    public bool isEntrance => paths.Count == 1;
 
     public Path GetPathContainingEndPoint(PathEndPoint endPoint)
     {
@@ -18,6 +21,7 @@ public class PathEndPoint : MonoBehaviour
                 }
             }
         }
+
         return null;
     }
 
@@ -34,11 +38,34 @@ public class PathEndPoint : MonoBehaviour
                     break;
                 }
             }
+
             if (notContains)
             {
                 return path;
             }
         }
+
         return null;
+    }
+
+    public void DisableTrigger()
+    {
+        StartCoroutine(TriggerTimeout());
+    }
+
+    private IEnumerator TriggerTimeout()
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (var collider in colliders)
+        {
+            collider.enabled = false;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        foreach (var collider in colliders)
+        {
+            collider.enabled = true;
+        }
     }
 }
