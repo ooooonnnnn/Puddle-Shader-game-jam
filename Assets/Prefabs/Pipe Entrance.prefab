@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8600204976525774808}
   - component: {fileID: 6382307460499366062}
   - component: {fileID: -1803824039330207074}
+  - component: {fileID: 4969676302382110980}
   - component: {fileID: 2420909439124677866}
   - component: {fileID: 6112570683173610380}
   - component: {fileID: 4940441134042591094}
-  - component: {fileID: 4969676302382110980}
   m_Layer: 0
   m_Name: Pipe Entrance
   m_TagString: Ground
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1227513949
-  m_SortingLayer: 1
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -2710536439906541850, guid: 347c8a5fda0e2aa4a9f2c0e5162acb43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -124,6 +124,23 @@ MonoBehaviour:
   paths: []
   exitSpeedBoost: 5
   maxExitSpeed: 25
+--- !u!114 &4969676302382110980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912044319194764451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bb75ba66721a34a84b82c61fd5f071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableCameraOnExit: 0
+  disableCameraOnEnter: 0
+  disableEntranceOnExit: 0
+  endPoint: {fileID: -1803824039330207074}
+  cinemachineFollow: {fileID: 0}
 --- !u!61 &2420909439124677866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -321,15 +338,3 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &4969676302382110980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912044319194764451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49bb75ba66721a34a84b82c61fd5f071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

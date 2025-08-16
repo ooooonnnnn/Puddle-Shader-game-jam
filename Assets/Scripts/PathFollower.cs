@@ -18,12 +18,14 @@ public class PathFollower : MonoBehaviour
 
     public void StartFollow(PathEndPoint origin)
     {
-        print("Called StartFollow");
         StartCoroutine(FollowPathsToTarget(origin));
     }
 
     private IEnumerator FollowPathsToTarget(PathEndPoint origin)
     {
+        //Call event on origin
+        origin.GetComponent<EntranceEvents>()?.InvokeEnter();
+
         PathEndPoint currentPoint = origin;
         PathEndPoint prevPoint = null;
         List<PathEndPoint> endPoints = new List<PathEndPoint>();
@@ -33,8 +35,6 @@ public class PathFollower : MonoBehaviour
         do
         {
             endPoints.Add(currentPoint);
-            print(
-                $"{currentPoint.paths.Where(p => p.isActive).Count()} active paths from {currentPoint.gameObject.name}");
 
             //Find next path segment
             Path nextPath;
@@ -63,15 +63,9 @@ public class PathFollower : MonoBehaviour
             //Find next point
             prevPoint = currentPoint;
             currentPoint = nextPath.endPoints.Find(ep => ep != currentPoint);
-            print($"next end point {currentPoint.gameObject.name}");
         } while (!currentPoint.isEntrance);
 
         endPoints.Add(currentPoint);
-
-        print(
-            $"Found {endPoints.Count} end points and {paths.Count} paths from {origin.gameObject.name} to {currentPoint.gameObject.name}");
-        print($"Paths: {string.Join(", ", paths.Select(path => path.gameObject.name))}");
-        print($"End Points: {string.Join(", ", endPoints.Select(ep => ep.gameObject.name))}");
 
         // Move through the path
         float initialVelocity = rb.linearVelocity.magnitude;
@@ -91,7 +85,6 @@ public class PathFollower : MonoBehaviour
             bool flip = (pathPos[pathPos.Count - 1] - transform.position).magnitude <
                         (pathPos[0] - transform.position).magnitude;
 
-            float totalLength = paths[i].totalLength;
             for (int j = 0; j < paths[i].path.positionCount; j++)
             {
                 int k = !flip ? j : paths[i].path.positionCount - 1 - j;
@@ -108,6 +101,9 @@ public class PathFollower : MonoBehaviour
         rb.linearVelocity = endPoints.Last().transform.up *
                       Mathf.Clamp(initialVelocity + endPoints.Last().exitSpeedBoost,
                           0, endPoints.Last().maxExitSpeed);
+
+        //Call event on final end point
+        endPoints.Last().GetComponent<EntranceEvents>()?.InvokeExit();
     }
 
     private IEnumerator TweenPosition(Vector3 start, Vector3 end)
