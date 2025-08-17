@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using System;
+using System.Linq;
 
 public class DebugLogShower : MonoBehaviour
 {
@@ -19,9 +20,14 @@ public static class MyDebugLogManager
     public static void LogMessage(string message)
     {
         if (shower == null || shower.text == null)
-            throw new Exception("DebugLogShower is not set up correctly.");
+        {
+            Debug.LogWarning("DebugLogShower is not set up correctly.");
+            return;
+        }
 
         string previousText = shower.text.text;
-        shower.text.text = string.Concat(message, "\n", previousText);
+        string newText = string.Concat(message, "\n", previousText);
+        newText = newText.Length > 400 ? newText.Substring(0, 400) : newText; // Limit to 400 characters
+        shower.text.text = newText;
     }
 }

@@ -21,7 +21,7 @@ public class PipeBehavior : MonoBehaviour
     {
         if (!isTeleporting)
         {
-            MyDebugLogManager.LogMessage($"{gameObject.name} triggered at time {Time.time}");
+            //MyDebugLogManager.LogMessage($"{gameObject.name} triggered at time {Time.time}");
             StartCoroutine(EnterPipe(other.GetComponent<PathFollower>()));
         }
     }
@@ -33,9 +33,9 @@ public class PipeBehavior : MonoBehaviour
 
     private IEnumerator EnterPipe(PathFollower pathFollower)
     {
-        MyDebugLogManager.LogMessage($"EnterPipe called");
-        if (!pathFollower)
-            MyDebugLogManager.LogMessage("PathFollower is null");
+        //MyDebugLogManager.LogMessage($"EnterPipe called");
+        //if (!pathFollower)
+        //    MyDebugLogManager.LogMessage("PathFollower is null");
 
         if (!isTeleporting)
         {

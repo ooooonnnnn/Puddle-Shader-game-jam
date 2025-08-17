@@ -14,6 +14,7 @@ public class PipeTravesalSound : MonoBehaviour
 
     public void StartSound()
     {
+        MyDebugLogManager.LogMessage("StartSound called");
         audioSource?.Play();
     }
 
