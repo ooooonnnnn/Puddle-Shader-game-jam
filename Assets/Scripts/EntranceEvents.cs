@@ -9,7 +9,7 @@ public class EntranceEvents : MonoBehaviour
     [SerializeField] private bool enableCameraOnExit;
     [SerializeField] private bool disableCameraOnEnter;
     [SerializeField] private bool disableEntranceOnExit;
-    [SerializeField] private PathEndPoint endPoint;
+    [SerializeField, HideInInspector] private PathEndPoint endPoint;
     [SerializeField] private CinemachineFollow cinemachineFollow;
     [SerializeField] private CameraBehavior cameraBehavior;
 
@@ -32,6 +32,8 @@ public class EntranceEvents : MonoBehaviour
             OnExit += () => endPoint.paths[0].isActive = false;
             OnExit += endPoint.UpdateStateColor;
         }
+
+        MyDebugLogManager.LogMessage("EntranceEvents events successfuly set");
     }
 
     public void InvokeEnter()
@@ -41,6 +43,7 @@ public class EntranceEvents : MonoBehaviour
 
     public void InvokeExit()
     {
+        MyDebugLogManager.LogMessage("InvokeExit called");
         OnExit?.Invoke();
     }
 }

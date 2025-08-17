@@ -3,7 +3,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PipeTravesalSound : MonoBehaviour
 {
-    private AudioSource audioSource;
+    [SerializeField, HideInInspector] private AudioSource audioSource;
 
     private void OnValidate()
     {
@@ -20,6 +20,11 @@ public class PipeTravesalSound : MonoBehaviour
 
     public void StopSound()
     {
+        MyDebugLogManager.LogMessage("StopSound called");
+         if (audioSource == null)
+             MyDebugLogManager.LogMessage("AudioSource is null.");
+
+        // Stop the audio source
         audioSource?.Stop();
     }
 }

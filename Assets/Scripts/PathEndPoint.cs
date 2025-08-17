@@ -8,7 +8,7 @@ public class PathEndPoint : MonoBehaviour
     [SerializeField] public List<Path> paths;
     [SerializeField] public float exitSpeedBoost = 5f;
     [SerializeField] public float maxExitSpeed = 25f;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField, HideInInspector] private SpriteRenderer spriteRenderer;
     private Color initialCol;
     [SerializeField] private Color inactiveTint;
     private static event Action OnChangeState;

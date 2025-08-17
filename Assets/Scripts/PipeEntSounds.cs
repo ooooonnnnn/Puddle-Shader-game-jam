@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class PipeEntSounds : MonoBehaviour
 {
-    [SerializeField] private AudioClip exitSound;
-    [SerializeField] private AudioClip enterSound;
-    private AudioSource _audioSource;
-    private EntranceEvents _entranceEvents;
+    [SerializeField, HideInInspector] private AudioClip exitSound;
+    [SerializeField, HideInInspector] private AudioClip enterSound;
+    [SerializeField, HideInInspector] private AudioSource _audioSource;
+    [SerializeField, HideInInspector] private EntranceEvents _entranceEvents;
     
     void OnValidate()
     {

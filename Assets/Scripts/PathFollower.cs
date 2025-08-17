@@ -122,16 +122,18 @@ public class PathFollower : MonoBehaviour
         
         spriteRenderer.sortingLayerName = "Default";
         //Call event on final end point
+        MyDebugLogManager.LogMessage("Traversal complete");
         endPoints.Last().GetComponent<EntranceEvents>()?.InvokeExit();
 
+
         // Stop traversal sound
+        if (!pipeTravesalSound)
+            MyDebugLogManager.LogMessage("PipeTravesalSound is null");
         pipeTravesalSound.StopSound();
     }
 
     private IEnumerator TweenPosition(Vector3 start, Vector3 end)
     {
-        MyDebugLogManager.LogMessage($"Tweening from {start} to {end}");
-
         float distance = Vector3.Distance(start, end);
         float duration = distance * oneOverSpeed;
         float startTime = Time.time;
@@ -143,8 +145,6 @@ public class PathFollower : MonoBehaviour
         }
 
         transform.position = end; // Ensure final position is set
-
-        MyDebugLogManager.LogMessage($"Tweening complete. Final position: {transform.position}");
     }
 
     private void Update()
