@@ -22,11 +22,16 @@ public class PathFollower : MonoBehaviour
 
     public void StartFollow(PathEndPoint origin)
     {
+        MyDebugLogManager.LogMessage("StartFollow called");
+        if (!origin)
+            MyDebugLogManager.LogMessage("Origin is null");
         StartCoroutine(FollowPathsToTarget(origin));
     }
 
     private IEnumerator FollowPathsToTarget(PathEndPoint origin)
     {
+        MyDebugLogManager.LogMessage("FollowPathsToTarget called");
+
         //Call event on origin
         origin.GetComponent<EntranceEvents>()?.InvokeEnter();
 

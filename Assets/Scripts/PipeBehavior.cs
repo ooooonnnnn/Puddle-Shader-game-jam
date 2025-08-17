@@ -21,8 +21,8 @@ public class PipeBehavior : MonoBehaviour
     {
         if (!isTeleporting)
         {
-            StartCoroutine(MyEnterPipe(other.gameObject.GetComponent<PathFollower>())); 
-            TriggerInteractionDaddy.NotifyInteraction(this);
+            MyDebugLogManager.LogMessage($"{gameObject.name} triggered at time {Time.time}");
+            StartCoroutine(EnterPipe(other.GetComponent<PathFollower>()));
         }
     }
     
@@ -31,8 +31,12 @@ public class PipeBehavior : MonoBehaviour
     //        StartCoroutine(myEnterPipe(other.GetComponent<PathFollower>()));
     //}
 
-    private IEnumerator MyEnterPipe(PathFollower pathFollower)
+    private IEnumerator EnterPipe(PathFollower pathFollower)
     {
+        MyDebugLogManager.LogMessage($"EnterPipe called");
+        if (!pathFollower)
+            MyDebugLogManager.LogMessage("PathFollower is null");
+
         if (!isTeleporting)
         {
             isTeleporting = true;
@@ -42,31 +46,4 @@ public class PipeBehavior : MonoBehaviour
             isTeleporting = false;
         }
     }
-
-    //IEnumerator EnterPipe(GameObject player)
-    //{
-    //    if (myExit == null)
-    //        yield break;
-
-    //    isTeleporting = true;
-
-    //    PathFollower pathFollower = player.GetComponent<PathFollower>();
-
-    //    var playerRigidbody = player.GetComponent<Rigidbody2D>();
-
-    //    // Get original speed before teleport
-    //    float originalSpeed = playerRigidbody.linearVelocity.magnitude;
-
-    //    // Move player to exit position
-    //    Vector2 exitPosition = (Vector2)myExit.transform.position + (Vector2)myExit.transform.up * 1.5f;
-    //    player.transform.position = exitPosition;
-
-    //    // Set velocity in the exit's direction, with the new speed
-    //    float newSpeed = originalSpeed + exitVelocity;
-    //    playerRigidbody.linearVelocity = (Vector2)myExit.transform.up * newSpeed;
-
-    //    // Wait a short time to prevent retriggering
-    //    yield return new WaitForSeconds(0.2f);
-    //    isTeleporting = false;
-    //}
 }
