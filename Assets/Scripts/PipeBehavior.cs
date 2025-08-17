@@ -20,7 +20,10 @@ public class PipeBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!isTeleporting)
-            StartCoroutine(MyEnterPipe(other.gameObject.GetComponent<PathFollower>()));
+        {
+            StartCoroutine(MyEnterPipe(other.gameObject.GetComponent<PathFollower>())); 
+            TriggerInteractionDaddy.NotifyInteraction(this);
+        }
     }
     
     //private void OnTriggerStay2D(Collider2D other)

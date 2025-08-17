@@ -55,7 +55,6 @@ public class Controller : MonoBehaviour
     private void LimitBounceOnLowSpeed()
     {
         rb.sharedMaterial = rb.linearVelocity.magnitude < minBouncySpeed ? normalMaterial : bouncyMaterial;
-        print($"Material: {rb.sharedMaterial.name}, Speed: {rb.linearVelocity.magnitude}");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

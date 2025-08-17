@@ -101,7 +101,6 @@ public class PathEndPoint : MonoBehaviour
 
     private void OnDestroy()
     {
-        print("destroyed");
         if (isEntrance)
             OnChangeState = null;
     }
