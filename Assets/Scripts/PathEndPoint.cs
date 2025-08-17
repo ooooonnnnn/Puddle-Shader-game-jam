@@ -11,7 +11,7 @@ public class PathEndPoint : MonoBehaviour
     [SerializeField, HideInInspector] private SpriteRenderer spriteRenderer;
     private Color initialCol;
     [SerializeField] private Color inactiveTint;
-    private static event Action OnChangeState;
+    private static event Action OnChangeStateStatic;
     public bool isEntrance => paths.Count == 1;
 
     private void OnValidate()
@@ -87,14 +87,14 @@ public class PathEndPoint : MonoBehaviour
 
     public static void InvokeChangeState()
     {
-        OnChangeState?.Invoke();
+        OnChangeStateStatic?.Invoke();
     }
 
     private void Awake()
     {
         if (isEntrance)
         {
-            OnChangeState += UpdateStateColor;
+            OnChangeStateStatic += UpdateStateColor;
             UpdateStateColor();
         }
     }
@@ -102,7 +102,7 @@ public class PathEndPoint : MonoBehaviour
     private void OnDestroy()
     {
         if (isEntrance)
-            OnChangeState = null;
+            OnChangeStateStatic = null;
     }
 
 

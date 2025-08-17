@@ -4187,6 +4187,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1099262658033769286, guid: 18b68002280e56c4baf63603d63aa156, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1099262658033769286, guid: 18b68002280e56c4baf63603d63aa156, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1227513949
+      objectReference: {fileID: 0}
     - target: {fileID: 1232588249281417424, guid: 18b68002280e56c4baf63603d63aa156, type: 3}
       propertyPath: m_Name
       value: Entrance Pipe
