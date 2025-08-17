@@ -9,8 +9,8 @@ public class PathEndPoint : MonoBehaviour
     [SerializeField] public float exitSpeedBoost = 5f;
     [SerializeField] public float maxExitSpeed = 25f;
     [SerializeField, HideInInspector] private SpriteRenderer spriteRenderer;
-    private Color initialCol;
     [SerializeField] private Color inactiveTint;
+    [SerializeField, HideInInspector] private Color initialCol;
     private static event Action OnChangeStateStatic;
     public bool isEntrance => paths.Count == 1;
 
@@ -18,6 +18,15 @@ public class PathEndPoint : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         initialCol = spriteRenderer.color;
+    }
+
+    private void Awake()
+    {
+        if (isEntrance)
+        {
+            OnChangeStateStatic += UpdateStateColor;
+            UpdateStateColor();
+        }
     }
 
     public Path GetPathContainingEndPoint(PathEndPoint endPoint)
@@ -88,15 +97,6 @@ public class PathEndPoint : MonoBehaviour
     public static void InvokeChangeState()
     {
         OnChangeStateStatic?.Invoke();
-    }
-
-    private void Awake()
-    {
-        if (isEntrance)
-        {
-            OnChangeStateStatic += UpdateStateColor;
-            UpdateStateColor();
-        }
     }
 
     private void OnDestroy()
