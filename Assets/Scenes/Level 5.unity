@@ -388,6 +388,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1386342976}
   m_SourcePrefab: {fileID: 100100000, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
+--- !u!114 &142388518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2429541796165197726, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
+  m_PrefabInstance: {fileID: 142388517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386342974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6555da92d0a0147ae7e03d727cfdc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &142388519 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 132357301878464365, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
+  m_PrefabInstance: {fileID: 142388517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &145981415 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7951499122644005778, guid: 2b5773e18f974fc4982abb3bb40e134c, type: 3}
@@ -14242,6 +14258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 1386342975}
+  spriteRenderer: {fileID: 142388519}
+  pipeTravesalSound: {fileID: 142388518}
 --- !u!4 &1386342977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3185021854995658849, guid: ef27c78dbf575db4f863e16d6c4d94b3, type: 3}
@@ -14834,7 +14852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4925296306880391842, guid: dbaa25129ee524045b27bd16eaba717d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 218
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 4925296306880391842, guid: dbaa25129ee524045b27bd16eaba717d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14847,6 +14865,14 @@ PrefabInstance:
     - target: {fileID: 4925296306880391842, guid: dbaa25129ee524045b27bd16eaba717d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782383455250403485, guid: dbaa25129ee524045b27bd16eaba717d, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782383455250403485, guid: dbaa25129ee524045b27bd16eaba717d, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
