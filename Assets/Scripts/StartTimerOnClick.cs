@@ -9,4 +9,9 @@ public class StartTimerOnClick : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(GameTimer.StartTimer);
     }
+
+    public void StartTimer()
+    {
+        GameTimer.StartTimer();
+    }
 }

@@ -1,11 +1,19 @@
+using System;
 using UnityEngine;
 
 public static class GameTimer
 {
-    public static float totalGameTime => Time.time - startTime;
-    private static float startTime;
+    public static string totalGameTime
+    {
+        get
+        {
+            var elapsed = DateTime.UtcNow - _startTime;
+            return $"{(int)elapsed.TotalSeconds}.{elapsed.Milliseconds / 10:00}";
+        }
+    }
+    private static DateTime _startTime;
     public static void StartTimer()
     {
-        startTime = Time.time;
+        _startTime = DateTime.UtcNow;
     }
 }
